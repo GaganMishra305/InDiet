@@ -60,8 +60,17 @@ InDiet is a platform to solve the Obesity Problems faced Accross the World. InDi
         Contains 25000 images distributed accross 101 Classes.
         Link for the dataset: https://www.kaggle.com/datasets/dansbecker/food-101
 
-    --> The Model is trained using CNN.
+    --> The Model is trained using CNN. This model gives food name from image.
 
-2> Diet Plan Model: 
+2> Nutrients Detection Model:
+    --> Uses "https://api.nal.usda.gov/fdc/v1/foods/search" for getting information about food nutrients(carbs, proteins, sugar, fiber, calories) from food name.
+
+3> Food score model:
+    --> Normalizes food nutrients and gives a food score based of the constituents of a balanced diet. (
+Carbs: 45-65%, Proteins: 10-35%, Fats: 20-35%, Sugar: <10%, Fiber: 25-38g, Calories: 2000)
+
+4> The above three models combine to give a complex model that gives the food score from just the image of over 100 differnet food classes. 
+
+5> Diet Plan Model: 
     --> Dataset Used: Nutrition Dataset
     --> Model is Trained using Pulp to Give Diet for the entire week based on the amount of Carbs, Proteins, etc the user wants to consume.
