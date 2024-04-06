@@ -5,7 +5,7 @@ import { getUser } from "./api/auth/[...thirdweb]";
 function Profile() {
   return (
     <div className="pt-40">
-      <h1 className="h1 mb-6 text-center">User Profile</h1>
+      <h1 className="h1 mb-6 text-center">User Profile NFT </h1>
         <Worker />
         <Businesses />
     </div>

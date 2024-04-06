@@ -33,7 +33,7 @@ const Worker = () => {
                                 <MediaRenderer 
                                     key={worker.metadata.id}
                                     src={worker.metadata.image}
-                                    className="aspect-auto"
+                                    // className="aspect-auto"
                                 />
                             </div>
                             <div>
@@ -51,6 +51,7 @@ const Worker = () => {
                     <Image
                         src={gojo}
                         className="aspect-auto"
+                        alt="Gojo Satoru"
                     />
                 </div>
                 <div>
