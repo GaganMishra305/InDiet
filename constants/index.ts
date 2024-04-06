@@ -24,10 +24,10 @@ import {
   raindrop,
   recording01,
   recording03,
-  roadmap1,
+  toadmap1,
   roadmap2,
-  roadmap3,
-  roadmap4,
+  toadmap2,
+  toadmap3,
   searchMd,
   slack,
   sliders04,
@@ -91,7 +91,7 @@ export const roadmap = [
     text: "Challenge DietRats all accross the Globe based on the Food Score your Meal receives to see who comes out on top!",
     date: "Free",
     status: "done",
-    imageUrl: roadmap1,
+    imageUrl: toadmap1,
     colorful: true,
   },
   {
@@ -108,7 +108,7 @@ export const roadmap = [
     text: "Know the amount of Proteins, Fat, etc. you consume through our out of this World Nutrient Detector. Click a pic of your meal and let us do our job!",
     date: "Freemium",
     status: "done",
-    imageUrl: roadmap3,
+    imageUrl: toadmap2,
   },
   {
     id: "3",
@@ -116,7 +116,7 @@ export const roadmap = [
     text: "Get Personalized Diet Plan based on the amount of calories you want to consume per week. We will get you the best Diet Plan out there!",
     date: "Premium",
     status: "done",
-    imageUrl: roadmap4,
+    imageUrl: toadmap3,
   },
 ];
 
