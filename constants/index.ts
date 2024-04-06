@@ -59,8 +59,8 @@ export const navigation = [
   },
   {
     id: "4",
-    title: "Leaderboard",
-    url: "/LeaderBoard",
+    title: "Contest",
+    url: "/WeeklyContest",
   },
   {
     id: "5",

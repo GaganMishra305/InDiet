@@ -40,7 +40,7 @@ const Hero = () => {
           Transform Your Body, Transform Your Life:&nbsp;
           InDiet - Your Ultimate Fitness & Nutrition Companion
           </p>
-          <Button href="/login" white>
+          <Button href="/contest" white>
             Get Started
           </Button>
         </div>

@@ -4,20 +4,14 @@ import gojo from "../assets/gojo.jpeg"
 import Image from "next/image";
 
 const Worker = () => {
-    // Get the user's address to get the owned workers
     const address = useAddress();
 
-    // Get the worker contract instance
-    // Get the user's owned worker NFTs
     const { contract: workerContract } = useContract(USER_CONTRACT_ADDRESS);
     const { data: ownedWorkers, isLoading: loadingWorker } = useOwnedNFTs(workerContract, address);
 
-    // Get the token contract instance
-    // Get the user's token balance with address
     const { contract: tokenContract } = useContract(TOKEN_CONTRACT_ADDRESS);
     const { data: tokenBalance } = useTokenBalance(tokenContract, address);
 
-    // Truncate the number to 6 decimal places
     const truncateNumber = (num: string) => {
         return num.slice(0, 6);
     }
@@ -32,9 +26,10 @@ const Worker = () => {
                             <div className="flex w-full justify-center flex-col items-center">
                                 <MediaRenderer
                                     key={worker.metadata.id}
+                                    // loader={() => worker.metadata.image ?? ""} 
                                     src={worker.metadata.image}
                                     className="aspect-auto"
-                                    atl="nft"
+                                    // alt="nft"
                                     width={500}
                                     height={500}
                                 />

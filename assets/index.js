@@ -83,8 +83,10 @@ import facebook from "./socials/facebook.svg";
 import instagram from "./socials/instagram.svg";
 import telegram from "./socials/telegram.svg";
 import twitter from "./socials/twitter.svg";
+import new_robo5 from "./new_robo5.jpeg";
 
 export {
+  new_robo5,
   brainwave,
   check,
   check2,

@@ -73,19 +73,19 @@ export default function BusinessCard({ tokenId }: Props) {
                     )
                 )}
             </div>
-           {(claimableRewards && claimableRewards < 9) ? (
-             <Web3Button
-             contractAddress={STAKING_CONTRACT_ADDRESS}
-             action={(contract) => contract.call(
-                 "claimRewards",
-                 [tokenId]
-             )}
-         >Claim NFT</Web3Button>
-           ): (
+        {(claimableRewards && claimableRewards.lt(BigNumber.from(9))) ? (
+            <Web3Button
+                contractAddress={STAKING_CONTRACT_ADDRESS}
+                action={(contract) => contract.call(
+                    "claimRewards",
+                    [tokenId]
+                )}
+            >Claim NFT</Web3Button>
+        ) : (
             <button>
                 Wait For Next weekly contest
             </button>
-           )}
+        )}
         </div>
     );
 }
