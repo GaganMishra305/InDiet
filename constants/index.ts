@@ -49,12 +49,12 @@ export const navigation = [
   },
   {
     id: "2",
-    title: "Contest",
+    title: "Features",
     url: "/contest",
   },
   {
     id: "3",
-    title: "Pro Subscription",
+    title: "Subscriptions",
     url: "/ProSubscription",
   },
   {
@@ -76,9 +76,8 @@ export const notificationImages = [notification4, notification3, notification2];
 export const companyLogos = [yourlogo, yourlogo, yourlogo, yourlogo, yourlogo];
 
 export const brainwaveServices = [
-  "Photo generating",
-  "Photo enhance",
-  "Seamless Integration",
+  "Upload Picture of Your Meal",
+  "Get Alotted Food Score BAsed on Your Meal"
 ];
 
 export const brainwaveServicesIcons = [
