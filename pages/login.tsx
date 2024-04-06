@@ -63,7 +63,6 @@ const Login = () => {
                         setLoadingStatus("Worker and tokens claimed...");
                     } catch (error) {
                         console.error(error);
-                        alert("Error creating new account. Please try again.");
                     } finally {
                         // Redirect to the home page
                         setLoadingStatus("");
