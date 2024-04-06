@@ -81,7 +81,6 @@ export default function BusinessCard({ tokenId }: Props) {
                     "claimRewards",
                     [tokenId]
                 )}
-                onSuccess={() => alert("Revenue Claimed!")}
                 className=""
             >Claim Revenue</Web3Button>
         </div>

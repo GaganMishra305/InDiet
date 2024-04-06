@@ -3,7 +3,7 @@ import AIImage from '../components/AIImage'
 
 function WeeklyContest() {
   return (
-    <div className='mt-40'>
+    <div className=''>
       <AIImage/>
     </div>
   )

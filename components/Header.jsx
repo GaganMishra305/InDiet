@@ -2,7 +2,7 @@ import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import { useRouter } from "next/router";
 import { TOKEN_CONTRACT_ADDRESS } from "../constants/contracts";
 import { ConnectWallet, useAddress, useContract, useTokenBalance } from "@thirdweb-dev/react";
-import { brainwave } from "../assets";
+import { logo } from "../assets";
 import { navigation } from "../constants";
 import Button from "./Button";
 import MenuSvg from "../assets/svg/MenuSvg";
@@ -50,7 +50,7 @@ const Header = () => {
     >
       <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
         <Link className="block w-[12rem] xl:mr-8" href="/">
-          <Image src={brainwave} width={190} height={40} alt="Brainwave" />
+          <Image src={logo} width={190} height={40} alt="Brainwave" />
         </Link>
 
         <nav
@@ -94,7 +94,7 @@ const Header = () => {
           <MenuSvg openNavigation={openNavigation} />
         </Button>
           {tokenBalance && (
-            <p>{truncateNumber(tokenBalance?.displayValue)} {tokenBalance?.symbol}</p>
+            <p className="text-sm">{truncateNumber(tokenBalance?.displayValue)} {tokenBalance?.symbol}</p>
           )}
           <ConnectWallet />
       </div>

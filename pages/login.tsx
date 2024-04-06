@@ -6,7 +6,6 @@ const loginOptional = false;
 
 const Login = () => {
     const showConnectEmbed = useShowConnectEmbed();
-
     return (
         <div className="w-full h-[100vh] flex justify-center items-center">
             {showConnectEmbed && (
