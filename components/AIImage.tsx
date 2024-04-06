@@ -1,6 +1,6 @@
-import React from "react";
-import { useRef, useState, useEffect } from "react";
-import axios from "axios";
+import React from 'react'
+import { useRef, useState, useEffect } from 'react';
+import axios from 'axios';
 import ClipPath from "../assets/svg/ClipPath";
 import Image from "next/image";
 import { GradientLight } from "./design/Benefits";
@@ -12,21 +12,27 @@ import { Web3Button } from "@thirdweb-dev/react";
 
 function AIImage() {
   const fileRef = useRef(null);
-  const [file, setFile] = useState(null);
-  const [updateSuccess, setUpdateSuccess] = useState(false);
+  const [file, setFile] = useState<File | undefined>(undefined);
+  const [formData, setFormData] = useState({});
 
-  const handleSubmit = async (e) => {
+
+  const handleChange = (e:any) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = async (e:any) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:4000/", {
-        file: file,
-      });
-      const data = await res.json();
-      setUpdateSuccess(true);
-      console.log(data);
+      // console.log(e.target)
+      const formdata = new FormData();
+      formdata.append('image', file);
+      const res = await axios.post('http://localhost:4000/recognize_food',formdata)
+      console.log(res.data);
     } catch (error) {
       console.log(error);
     }
+     
+
   };
   return (
     <>
@@ -68,7 +74,6 @@ function AIImage() {
                 </form>
                 </div>
               </div>
-
               <GradientLight />
               <div
                 className="absolute inset-0.5 bg-n-8"
