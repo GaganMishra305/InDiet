@@ -15,6 +15,8 @@ const Header = () => {
   const pathname = useRouter();
   const address = useAddress();
 
+  const isLoggedIn = address !== null;
+
   // Get instance of the token contract
   // Get the user's token balance with address
   const { contract: tokenContract } = useContract(TOKEN_CONTRACT_ADDRESS);
@@ -74,7 +76,7 @@ const Header = () => {
               </Link>
             ))}
           </div>
-          <Link
+          {!isLoggedIn && <Link
                 key={"4"}
                 href={"/login"}
                 className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold lg:leading-5 lg:hover:text-n-1 xl:px-12 ${"/login" === pathname.hash
@@ -83,7 +85,7 @@ const Header = () => {
                 }`}
               >
                 Login
-          </Link>
+          </Link>}
           <HamburgerMenu />
         </nav>
 

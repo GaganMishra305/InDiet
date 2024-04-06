@@ -6,16 +6,12 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 export default function Shop() {
-    // Get the businesses contract instance
-    // Get the NFTs from contract
     const { contract: businessesContract } = useContract(BUSINESSES_CONTRACT_ADDRESS);
     const { data: businesses } = useNFTs(businessesContract);
 
-    // Get the user's login state
     const { isLoggedIn, isLoading } = useUser();
     const router = useRouter();
 
-    // Checks if the user is logged in and redirects to the login page if not.
     useEffect(() => {
       if (!isLoggedIn && !isLoading) {
         router.push("/login");
@@ -41,7 +37,6 @@ export default function Shop() {
     )
 };
 
-// This is a server-side function that checks if the user is logged in and redirects to the login page if not.
 export async function getServerSideProps(context: any) {
     const user = await getUser(context.req);
   

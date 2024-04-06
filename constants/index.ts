@@ -62,6 +62,11 @@ export const navigation = [
     title: "Leaderboard",
     url: "/LeaderBoard",
   },
+  {
+    id: "5",
+    title: "Shop",
+    url: "/Shop",
+  },
 ];
 
 export const heroIcons = [homeSmile, file02, searchMd, plusSquare];

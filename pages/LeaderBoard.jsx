@@ -10,15 +10,15 @@ function LeaderBoard() {
 
 
   
-    if (!isLoggedIn) {
-      router.push("/login");
-      return null;
-    }
+    useEffect(()=>{
+      if(!isLoading && !isLoggedIn){
+        router.push("/login");
+      }
+    },[])
   return (
-    <>
+    <div className='mt-16' >
       <Collaboration />
-      <p>Hello world!</p>  {/* Display "hello world" if logged in */}
-    </>
+    </div>
   )
 }
 

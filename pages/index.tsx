@@ -8,20 +8,6 @@ import Businesses from "../components/Businesses";
 import Hero from "../components/Hero";
 
 const Home: NextPage = () => {
-  // Check if the user is logged in
-  const { isLoggedIn, isLoading } = useUser();
-  // Redirect to login if not logged in
-  const router = useRouter();
-
-  const address = useAddress();
-
-  // Checks if the user is logged in and redirects to the login page if not.
-  // This is a client-side function that runs after the page is loaded.
-  useEffect(() => {
-    if (!isLoggedIn && !isLoading) {
-      router.push("/login");
-    }
-  }, [isLoggedIn, isLoading, router]);
 
   return (
     <div className="">

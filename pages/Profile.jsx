@@ -1,6 +1,9 @@
 import React from 'react'
 import { useUser } from "@thirdweb-dev/react";
 import { useRouter } from "next/router";
+import Businesses from '../components/Businesses';
+import BusinessCard from '../components/BusinessCard';
+
 function Profile() {
   const { isLoggedIn, isLoading } = useUser();
   const router = useRouter();
@@ -10,7 +13,8 @@ function Profile() {
     }
   return (
     <div className='pt-20'>
-      <h1>Hii you </h1>
+      <Businesses/>
+      <BusinessCard/>
     </div>
   )
 }
