@@ -5,7 +5,7 @@ import Tagline from "./Tagline";
 import { roadmap } from "../constants";
 import { check2, grid, loading1 } from "../assets";
 import { Gradient } from "./design/Roadmap";
-
+import Image from 'next/image';
 const Roadmap = () => (
   <Section className="overflow-hidden" id="roadmap">
     <div className="container md:pb-10">
@@ -24,7 +24,7 @@ const Roadmap = () => (
             >
               <div className="relative p-8 bg-n-8 rounded-[2.4375rem] overflow-hidden xl:p-15">
                 <div className="absolute top-0 left-0 max-w-full">
-                  <img
+                  <Image
                     className="w-full"
                     src={grid}
                     width={550}
@@ -37,7 +37,7 @@ const Roadmap = () => (
                     <Tagline>{item.date}</Tagline>
 
                     <div className="flex items-center px-4 py-1 bg-n-1 rounded text-n-8">
-                      <img
+                      <Image
                         className="mr-2.5"
                         src={item.status === "done" ? check2 : loading1}
                         width={16}
@@ -49,7 +49,7 @@ const Roadmap = () => (
                   </div>
 
                   <div className="mb-10 -my-10 -mx-15">
-                    <img
+                    <Image
                       className="w-full"
                       src={item.imageUrl}
                       width={628}
@@ -68,9 +68,7 @@ const Roadmap = () => (
         <Gradient />
       </div>
 
-      <div className="flex justify-center mt-12 md:mt-15 xl:mt-20">
-        <Button href="/roadmap">Our roadmap</Button>
-      </div>
+     
     </div>
   </Section>
 );
