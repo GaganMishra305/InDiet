@@ -1,5 +1,7 @@
 import { MediaRenderer, useAddress, useContract, useOwnedNFTs, useTokenBalance } from "@thirdweb-dev/react";
 import { TOKEN_CONTRACT_ADDRESS, USER_CONTRACT_ADDRESS } from "../constants/contracts";
+import gojo from "../assets/gojo.jpeg"
+import Image from "next/image";
 
 const Worker = () => {
     // Get the user's address to get the owned workers
@@ -44,7 +46,18 @@ const Worker = () => {
                     ))
                 )
             ) : (
-                <p>Loading User...</p>
+                <div>
+                <div className="flex w-full justify-center flex-col items-center">
+                    <Image
+                        src={gojo}
+                        className="aspect-auto"
+                    />
+                </div>
+                <div>
+                    <p className="font-bold">IDLE USER - ID: #ID</p>
+                    <h4 className="h4">YOU WILL GET YOUR OWN NFT AFTER VERIFICATION</h4>
+                </div>
+            </div>
             )}
         </div>
         </div>
