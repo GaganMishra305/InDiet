@@ -35,22 +35,21 @@ function AIImage() {
   };
   return (
     <>
-      <div className="flex pt-32 mx-12">
-        <div className="w-[300%]">
-          <h1 className="h1">
-            {" "}
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-            ducimus esse quo aliquid soluta fugiat! Impedit necessitatibus
-            quisquam, dicta dolor et ea adipisci vel pariatur cum voluptates,
-            exercitationem alias! Voluptatem.
-          </h1>
-          <div>
-            <Web3Button>Collect Token</Web3Button>
-          </div>
-        </div>
-        <div className="w-full">
-          <Section>
-            <div className="z-2 flex">
+    <div className="flex pt-32 mx-12">
+    <div className="w-[300%]">
+    <h1 className="text-center text-4xl font-bold mb-8">
+          Upload Your Image to Earn NFT Tokens for <br></br>Exclusive NFTs
+        </h1>
+      <div>
+        {/* <Web3Button 
+          
+        >
+          Collect Token
+        </Web3Button> */}
+      </div>
+    </div>
+<div className="w-full">
+<Section>
               <div className="z-2 flex flex-col">
                 <h5 className="h5 mb-5">Want to participate in Contest</h5>
                 <form onSubmit={handleSubmit} className="">
@@ -65,7 +64,8 @@ function AIImage() {
                     onClick={() => fileRef.current.click()}
                     src={file ? URL.createObjectURL(file) : robot}
                     alt="profile"
-                    className="h-[full]"
+                    width={350}
+                    height={350}
                   />
                   <button type="submit">
                     {" "}
