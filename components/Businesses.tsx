@@ -15,10 +15,11 @@ const Businesses = () => {
     ]);
     
     return (
-        <div className="w-1/2">
+        <div className="p-8 m-10">
+        <h2 className="h2 ">Owned NFT:</h2>
+        <div className="flex flex-wrap gap-4">
             {!loadingBusinesses ? (
                 <>
-                    <h2>Businesses:</h2>
                     <div className="grid">
                         {stakedTokens &&
                             stakedTokens[0].length > 0 ? stakedTokens[0]?.map((stakedToken: BigNumber) => (
@@ -27,7 +28,7 @@ const Businesses = () => {
                                     tokenId={stakedToken.toNumber()}
                                 />
                             )) : (
-                                <p>No businesses started.</p>
+                                <p className="h4">No NFT...Sorry.</p>
                             )
                         }
                     </div>
@@ -35,6 +36,7 @@ const Businesses = () => {
             ) : (
                 <p>Loading businesses...</p>
             )}
+        </div>
         </div>
     )
 };

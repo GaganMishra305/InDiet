@@ -21,17 +21,17 @@ const Worker = () => {
     }
 
     return (
-        <div className="w-50%">
+        <div className="w-full flex justify-center">
+            <div className="w-1/2 bg-[#171424] shadow-[#635797] shadow-2xl py-4 px-8 rounded-2xl">
             {!loadingWorker ? (
                 ownedWorkers && ownedWorkers.length > 0 && (
                     ownedWorkers.map((worker) => (
                         <div  key={worker.metadata.id}>
-                            <div>
-                                <h2>Worker Stats:</h2>
+                            <div className="flex w-full justify-center flex-col items-center">
                                 <MediaRenderer 
                                     key={worker.metadata.id}
                                     src={worker.metadata.image}
-                                    
+                                    className="aspect-auto"
                                 />
                             </div>
                             <div>
@@ -44,8 +44,9 @@ const Worker = () => {
                     ))
                 )
             ) : (
-                <p>Loading worker...</p>
+                <p>Loading User...</p>
             )}
+        </div>
         </div>
     )
 };

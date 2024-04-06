@@ -1,22 +1,15 @@
-import React from 'react'
-import { useUser } from "@thirdweb-dev/react";
-import { useRouter } from "next/router";
-import Businesses from '../components/Businesses';
-import BusinessCard from '../components/BusinessCard';
+import React from "react";
+import Businesses from "../components/Businesses";
+import Worker from "../components/Worker";
 
 function Profile() {
-  const { isLoggedIn, isLoading } = useUser();
-  const router = useRouter();
-    if (!isLoggedIn) {
-      router.push("/login");
-      return null;
-    }
   return (
-    <div className='pt-20'>
-      <Businesses/>
-      <BusinessCard/>
+    <div className="pt-40">
+      <h1 className="h1 mb-6 text-center">User Profile</h1>
+        <Worker />
+        <Businesses />
     </div>
-  )
+  );
 }
 
-export default Profile
+export default Profile;

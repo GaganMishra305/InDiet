@@ -1,7 +1,6 @@
 import { MediaRenderer, useAddress, useClaimConditions, useContract } from "@thirdweb-dev/react";
 import { NFT, toEther } from "@thirdweb-dev/sdk";
 import { BUSINESSES_CONTRACT_ADDRESS, STAKING_CONTRACT_ADDRESS } from "../constants/contracts";
-import styles from "../styles/Home.module.css";
 import { useState } from "react";
 
 // Props for the NFTCard component
@@ -64,15 +63,15 @@ export default function NFTCard({ nft }: Props) {
     };
     
     return (
-        <div className="">
-            <MediaRenderer
+        <div className="bg-[#221d34] shadow-2xl shadow-[#221d34] rounded-xl">
+            <MediaRenderer className=" p-4 rounded-sm"
                 src={nft.metadata.image}
             />
             <div className="p-4">
                 <h3>{nft.metadata.name}</h3>
                 {claimCondition && claimCondition.length > 0 && (
                     claimCondition.map((condition, index) => (
-                        <div key={index}>
+                        <div key={index} className="py-2">
                             <p>Cost: {toEther(condition.price)} {condition.currencyMetadata.symbol}</p>
                             <p>Earns: {calculateEarnings(parseInt(toEther(condition.price)))} {condition.currencyMetadata.symbol}/hour</p>
                         </div>
@@ -80,7 +79,7 @@ export default function NFTCard({ nft }: Props) {
                 )}
             </div>
             <button
-                className=""
+                className="text-center w-full py-4 bg-[#44285e] rounded-b-xl text-white hover:bg-[#321c47]"
                 onClick={handleClaim}
                 disabled={claimState !== "init"}
             >{
