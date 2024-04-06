@@ -30,15 +30,13 @@ const Worker = () => {
                     ownedWorkers.map((worker) => (
                         <div  key={worker.metadata.id}>
                             <div className="flex w-full justify-center flex-col items-center">
-                                <Image
+                                <MediaRenderer
                                     key={worker.metadata.id}
                                     src={worker.metadata.image}
-<<<<<<< HEAD
-                                    // className="aspect-auto"
-=======
                                     className="aspect-auto"
                                     atl="nft"
->>>>>>> 81cf34a52edaf62837914ff2e150cab3cfae42a8
+                                    width={500}
+                                    height={500}
                                 />
                             </div>
                             <div>
@@ -54,11 +52,9 @@ const Worker = () => {
                     <Image
                         src={gojo}
                         className="aspect-auto"
-<<<<<<< HEAD
                         alt="Gojo Satoru"
-=======
-                        alt="gojo"
->>>>>>> 81cf34a52edaf62837914ff2e150cab3cfae42a8
+                        width={500}
+                        height={500}
                     />
                 </div>
                 <div>

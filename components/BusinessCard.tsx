@@ -33,6 +33,7 @@ export default function BusinessCard({ tokenId }: Props) {
         ]
     );
 
+
     // Update the claimable rewards every second
     useEffect(() => {
         if (!stakingContact || !address) return;
@@ -71,18 +72,20 @@ export default function BusinessCard({ tokenId }: Props) {
                         <p>Qty: {businessRewards[0].toNumber()}</p>
                     )
                 )}
-                {claimableRewards && (
-                    <p>Revenue: {truncateRevenue(claimableRewards as BigNumber)}</p>
-                )}
             </div>
-            <Web3Button
-                contractAddress={STAKING_CONTRACT_ADDRESS}
-                action={(contract) => contract.call(
-                    "claimRewards",
-                    [tokenId]
-                )}
-                className=""
-            >Claim Revenue</Web3Button>
+           {(claimableRewards && claimableRewards < 9) ? (
+             <Web3Button
+             contractAddress={STAKING_CONTRACT_ADDRESS}
+             action={(contract) => contract.call(
+                 "claimRewards",
+                 [tokenId]
+             )}
+         >Claim NFT</Web3Button>
+           ): (
+            <button>
+                Wait For Next weekly contest
+            </button>
+           )}
         </div>
     );
 }

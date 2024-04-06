@@ -34,7 +34,7 @@ const Businesses = () => {
                     </div>
                 </>
             ) : (
-                <p>Loading businesses...</p>
+                <p>Loading NFTs...</p>
             )}
         </div>
         </div>

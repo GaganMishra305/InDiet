@@ -24,7 +24,7 @@ export default function Shop() {
 
     return (
         <div className="mt-40">
-            <h2 className=" text-center text-5xl font-bold py-6">Buy a business:</h2>
+            <h2 className=" text-center text-5xl font-bold py-6">Buy a NFT:</h2>
             <div className="flex max-w-[1500px] justify-start px-12 items-center flex-wrap gap-12">
             {businesses && businesses.length > 0 ? (
                 businesses.map((business) => (
@@ -34,7 +34,7 @@ export default function Shop() {
                     />
                 ))
             ) : (
-                <p className="text-4xl text-center">No businesses for sale.</p>
+                <p className="text-4xl text-center">No NFT for sale.</p>
             )}
             </div>
         </div>

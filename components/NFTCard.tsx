@@ -73,7 +73,7 @@ export default function NFTCard({ nft }: Props) {
                     claimCondition.map((condition, index) => (
                         <div key={index} className="py-2">
                             <p>Cost: {toEther(condition.price)} {condition.currencyMetadata.symbol}</p>
-                            <p>Earns: {calculateEarnings(parseInt(toEther(condition.price)))} {condition.currencyMetadata.symbol}/hour</p>
+                            <p>Earns: {calculateEarnings(parseInt(toEther(condition.price)))} {condition.currencyMetadata.symbol}/Weekly</p>
                         </div>
                     ))
                 )}
