@@ -25,15 +25,20 @@ const Worker = () => {
     return (
         <div className="w-full flex justify-center">
             <div className="w-1/2 bg-[#171424] shadow-[#635797] shadow-2xl py-4 px-8 rounded-2xl">
-            {!loadingWorker ? (
-                ownedWorkers && ownedWorkers.length > 0 && (
+            {!loadingWorker && (
+                ownedWorkers && ownedWorkers.length > 0 ? (
                     ownedWorkers.map((worker) => (
                         <div  key={worker.metadata.id}>
                             <div className="flex w-full justify-center flex-col items-center">
-                                <MediaRenderer 
+                                <Image
                                     key={worker.metadata.id}
                                     src={worker.metadata.image}
+<<<<<<< HEAD
                                     // className="aspect-auto"
+=======
+                                    className="aspect-auto"
+                                    atl="nft"
+>>>>>>> 81cf34a52edaf62837914ff2e150cab3cfae42a8
                                 />
                             </div>
                             <div>
@@ -44,22 +49,24 @@ const Worker = () => {
                             </div>
                         </div>
                     ))
-                )
-            ) : (
-                <div>
+                ) : <div>
                 <div className="flex w-full justify-center flex-col items-center">
                     <Image
                         src={gojo}
                         className="aspect-auto"
+<<<<<<< HEAD
                         alt="Gojo Satoru"
+=======
+                        alt="gojo"
+>>>>>>> 81cf34a52edaf62837914ff2e150cab3cfae42a8
                     />
                 </div>
                 <div>
                     <p className="font-bold">IDLE USER - ID: #ID</p>
-                    <h4 className="h4">YOU WILL GET YOUR OWN NFT AFTER VERIFICATION</h4>
+                    <h4 className="h6">YOU WILL GET YOUR OWN NFT AFTER VERIFICATION</h4>
                 </div>
             </div>
-            )}
+    )}
         </div>
         </div>
     )
