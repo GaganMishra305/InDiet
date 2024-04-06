@@ -29,7 +29,7 @@ const Pricing = () => {
         </div>
 
         <Heading
-          tag="Choose one of the Plans."
+          tag="Choose one of our Plans."
           title="Pay once, use forever"
         />
 
@@ -44,7 +44,6 @@ const Pricing = () => {
             className="text-xs font-code font-bold tracking-wider uppercase border-b"
             href="/pricing"
           >
-            See the full details
           </Link>
         </div>
       </div>
