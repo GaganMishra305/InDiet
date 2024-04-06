@@ -1,4 +1,3 @@
-import Button from "./Button";
 import Heading from "./Heading";
 import Section from "./Section";
 import Tagline from "./Tagline";
@@ -6,6 +5,7 @@ import { roadmap } from "../constants";
 import { check2, grid, loading1 } from "../assets";
 import { Gradient } from "./design/Roadmap";
 import Image from 'next/image';
+import Link from "next/link";
 const Roadmap = () => (
   <Section className="overflow-hidden" id="roadmap">
     <div className="container md:pb-10">
@@ -57,8 +57,8 @@ const Roadmap = () => (
                       alt={item.title}
                     />
                   </div>
-                  <h4 className="h4 mb-4">{item.title}</h4>
-                  <p className="body-2 text-n-4">{item.text}</p>
+                  <Link href={"/WeeklyContest"}><h4 className="h4 mb-4">{item.title}</h4></Link>
+                  <Link href={"/WeeklyContest"}><p className="body-2 text-n-4">{item.text}</p></Link>
                 </div>
               </div>
             </div>

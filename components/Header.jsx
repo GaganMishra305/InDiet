@@ -94,7 +94,7 @@ const Header = () => {
           <MenuSvg openNavigation={openNavigation} />
         </Button>
           {tokenBalance && (
-            <p>{truncateNumber(tokenBalance?.displayValue)} {tokenBalance?.symbol}</p>
+            <p className="text-sm">{truncateNumber(tokenBalance?.displayValue)} {tokenBalance?.symbol}</p>
           )}
           <ConnectWallet />
       </div>
