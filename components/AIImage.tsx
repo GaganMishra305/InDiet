@@ -1,44 +1,60 @@
-import React from "react";
-import { useRef, useState, useEffect } from "react";
-import axios from "axios";
+import React from 'react'
+import { useRef, useState, useEffect } from 'react';
+import axios from 'axios';
 import ClipPath from "../assets/svg/ClipPath";
 import Image from "next/image";
 import { GradientLight } from "./design/Benefits";
+import Heading from "./Heading";
 import Section from "./Section";
 import Arrow from "../assets/svg/Arrow";
 import { robot } from "../assets";
+import { Web3Button } from "@thirdweb-dev/react";
 
 function AIImage() {
   const fileRef = useRef(null);
-  const [file, setFile] = useState(null);
-  const [updateSuccess, setUpdateSuccess] = useState(false);
+  const [file, setFile] = useState<File | undefined>(undefined);
+  const [formData, setFormData] = useState({});
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await axios.post("http://localhost:4000/", {
-        file: file,
-      });
-      const data = await res.json();
-      setUpdateSuccess(true);
-      console.log(data); // Assuming this will contain NFT tokens
-    } catch (error) {
-      console.error(error);
-    }
+
+  const handleChange = (e:any) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
+  const handleSubmit = async (e:any) => {
+    e.preventDefault();
+    try {
+      // console.log(e.target)
+      const formdata = new FormData();
+      formdata.append('image', file);
+      const res = await axios.post('http://localhost:4000/recognize_food',formdata)
+      console.log(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+     
+
+  };
   return (
     <>
-      <div className="flex items-center justify-center pt-32 mx-12">
-        <h1 className="text-center text-4xl font-bold mb-8">
-          Upload Your Image to Earn NFT Tokens for Exclusive NFTs
+    <div className="flex pt-32 mx-12">
+    <div className="w-[300%]">
+    <h1 className="text-center text-4xl font-bold mb-8">
+          Upload Your Image to Earn NFT Tokens for <br></br>Exclusive NFTs
         </h1>
-        <div className="w-full md:max-w-4xl">
-          <Section className="shadow-md rounded-lg p-8">
-            <div className="flex items-center justify-center">
-              <div className="flex flex-col items-center justify-center w-full">
-                <h5 className="mb-4">Want to participate in the Contest?</h5>
-                <form onSubmit={handleSubmit} className="flex w-full">
+      <div>
+        {/* <Web3Button 
+          
+        >
+          Collect Token
+        </Web3Button> */}
+      </div>
+    </div>
+<div className="w-full">
+<Section>
+        <div className="z-2 flex">
+              <div className="z-2 flex flex-col">
+                <h5 className="h5 mb-5">Want to participate in Contest</h5>
+                <form  onSubmit={handleSubmit} className="">
                   <input
                     onChange={(e) => setFile(e.target.files[0])}
                     type="file"
@@ -50,33 +66,34 @@ function AIImage() {
                     onClick={() => fileRef.current.click()}
                     src={file ? URL.createObjectURL(file) : robot}
                     alt="profile"
-                    className="w-64 h-48 rounded-full cursor-pointer border-4 border-blue-400 transition-all hover:border-blue-600"
+                    width={350}
+                    height={350}
                   />
-                  <button type="submit" className="ml-4 px-4 py-2 bg-blue-400 text-white rounded-md hover:bg-blue-500 focus:outline-none">
-                    <p className="font-semibold text-sm">Explore More</p>
-                    <Arrow className="w-4 h-4 ml-2" />
+                   <button type="submit"> <p className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
+                    Explore more
+                  </p>
+                  <Arrow />
                   </button>
                 </form>
+                </div>
               </div>
-            </div>
-            <GradientLight />
-            <div
-              className="absolute inset-0.5 bg-n-8"
-              style={{ clipPath: "url(#benefits)" }}
-            >
-              <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
-                <Image
-                  src={robot}
-                  alt="robot"
-                  layout="fill"
-                  objectFit="cover"
-                />
+              <GradientLight />
+              <div
+                className="absolute inset-0.5 bg-n-8"
+                style={{ clipPath: "url(#benefits)" }}
+              >
+                <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
+                  <Image
+                    src={robot}
+                    alt="robot"
+
+                  />
+                </div>
               </div>
-            </div>
-            <ClipPath />
-          </Section>
-        </div>
-      </div>
+              <ClipPath />
+      </Section>
+</div>
+    </div>
     </>
   );
 }
