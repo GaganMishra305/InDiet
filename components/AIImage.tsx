@@ -1,54 +1,50 @@
 import React from 'react'
 import { useRef, useState, useEffect } from 'react';
+import axios from 'axios';
 
 function AIImage() {
 
   const fileRef = useRef(null);
-  const [file, setFile] = useState(undefined);
+  const [file, setFile] = useState<File | undefined>(undefined);
   const [formData, setFormData] = useState({});
-  const [updateSuccess, setUpdateSuccess] = useState(false);
 
 
-  const handleChange = (e) => {
+  const handleChange = (e:any) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e:any) => {
     e.preventDefault();
     try {
-      
-      const res = await fetch(`/api/user/update/${currentUser._id}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-      const data = await res.json();
-     
-      setUpdateSuccess(true);
+      // console.log(e.target)
+      const formdata = new FormData();
+      formdata.append('image', file);
+      const res = await axios.post('http://localhost:4000/recognize_food',formdata)
+      console.log(res.data);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
+     
+
   };
   return (
     <>
       <div>
-      <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
+      <form onSubmit={handleSubmit}  className='flex flex-col gap-4'>
         <input
-          onChange={(e) => setFile(e.target.files[0])}
+          onChange={(e) => {console.log(e.target.files[0]);setFile(e.target.files[0])}}
           type='file'
           ref={fileRef}
-          hidden
+          // hidden
           accept='image/*'
         />
         <img
-          onClick={() => fileRef.current.click()}
+          onClick={() => fileRef.current?.click()}
           src={file ? URL.createObjectURL(file) : ''}
           alt='profile'
           className='rounded-full object-cover aspect-video cursor-pointer self-center mt-2'
         />
-        <button>Submit</button>
+        <button type='submit'>Submit</button>
         </form>
 
       </div>
