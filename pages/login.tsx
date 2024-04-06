@@ -63,7 +63,6 @@ const Login = () => {
                         setLoadingStatus("Worker and tokens claimed...");
                     } catch (error) {
                         console.error(error);
-                        alert("Error creating new account. Please try again.");
                     } finally {
                         // Redirect to the home page
                         setLoadingStatus("");
@@ -100,8 +99,7 @@ const Login = () => {
     }
 
     return (
-        <div className="">
-            <h1>Web3 Idle Game Login</h1>
+        <div className="w-full h-[100vh] flex justify-center items-center">
             {showConnectEmbed && (
                 <ConnectEmbed
                     auth={{
