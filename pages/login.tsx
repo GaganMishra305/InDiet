@@ -1,3 +1,4 @@
+'use client';
 import { ConnectEmbed, SmartWallet, useAddress, useSDK, useShowConnectEmbed, useUser, useWallet } from "@thirdweb-dev/react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
