@@ -46,7 +46,7 @@ function AIImage() {
                 <p>Score : {scoreData}</p> </>) : "Submit Your Photo by clicking on img to get Result"}</p>
             {scoreData && <Web3Button
               contractAddress={"0x8Cb9BfE184b61c71e701Cbc783c420C88A62FD85"}
-              action={(contract) => contract.erc20.mintTo(address, scoreData / 10)
+              action={(contract) => contract.erc20.mintTo(address ?? "", scoreData / 10)
               }
               onSuccess={() => alert("Congo")}
 
@@ -61,14 +61,14 @@ function AIImage() {
               <h5 className="h5 mb-5  font-code font-semibold text-center">Want to participate in Contest</h5>
               <form onSubmit={handleSubmit} className="">
                 <input
-                  onChange={(e) => setFile(e.target.files[0])}
+                  onChange={(e) => setFile(e.target.files?.[0] || undefined)}
                   type="file"
                   ref={fileRef}
                   hidden
                   accept="image/*"
                 />
                 <Image
-                  onClick={() => fileRef.current.click()}
+                  onClick={() => (fileRef.current !== null && (fileRef.current as HTMLInputElement).click())}
                   src={file ? URL.createObjectURL(file) : new_robo5}
                   alt="profile"
                   width={700}
