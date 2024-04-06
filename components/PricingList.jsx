@@ -1,7 +1,7 @@
 import { check } from "../assets";
 import { pricing } from "../constants";
 import Button from "./Button";
-
+import Image from 'next/image';
 const PricingList = () => {
   return (
     <div className="flex gap-[1rem] max-lg:flex-wrap">
@@ -29,7 +29,7 @@ const PricingList = () => {
 
           <Button
             className="w-full mb-6"
-            href={item.price ? "/pricing" : "mailto:contact@jsmastery.pro"}
+            href={ "/pricing" }
             white={!!item.price}
           >
             {item.price ? "Get started" : "Contact us"}
@@ -41,7 +41,7 @@ const PricingList = () => {
                 key={index}
                 className="flex items-start py-5 border-t border-n-6"
               >
-                <img src={check} width={24} height={24} alt="Check" />
+                <Image src={check} width={24} height={24} alt="Check" />
                 <p className="body-2 ml-4">{feature}</p>
               </li>
             ))}
