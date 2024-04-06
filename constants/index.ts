@@ -49,12 +49,12 @@ export const navigation = [
   },
   {
     id: "2",
-    title: "Contest",
+    title: "Features",
     url: "/contest",
   },
   {
     id: "3",
-    title: "Pro Subscription",
+    title: "Subscriptions",
     url: "/ProSubscription",
   },
   {
