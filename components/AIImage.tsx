@@ -4,7 +4,6 @@ import axios from "axios";
 import ClipPath from "../assets/svg/ClipPath";
 import Image from "next/image";
 import { GradientLight } from "./design/Benefits";
-import Heading from "./Heading";
 import Section from "./Section";
 import Arrow from "../assets/svg/Arrow";
 import { robot } from "../assets";
@@ -22,23 +21,24 @@ function AIImage() {
       });
       const data = await res.json();
       setUpdateSuccess(true);
-      console.log(data);
+      console.log(data); // Assuming this will contain NFT tokens
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
+
   return (
     <>
-    <div className="flex pt-32 mx-12">
-    <div className="w-[300%]">
-      <h1 className="h1"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ducimus esse quo aliquid soluta fugiat! Impedit necessitatibus quisquam, dicta dolor et ea adipisci vel pariatur cum voluptates, exercitationem alias! Voluptatem.</h1>
-    </div>
-<div className="w-full">
-<Section>
-        <div className="z-2 flex">
-              <div className="z-2 flex flex-col">
-                <h5 className="h5 mb-5">Want to participate in Contest</h5>
-                <form  onSubmit={handleSubmit} className="">
+      <div className="flex items-center justify-center pt-32 mx-12">
+        <h1 className="text-center text-4xl font-bold mb-8">
+          Upload Your Image to Earn NFT Tokens for Exclusive NFTs
+        </h1>
+        <div className="w-full md:max-w-4xl">
+          <Section className="shadow-md rounded-lg p-8">
+            <div className="flex items-center justify-center">
+              <div className="flex flex-col items-center justify-center w-full">
+                <h5 className="mb-4">Want to participate in the Contest?</h5>
+                <form onSubmit={handleSubmit} className="flex w-full">
                   <input
                     onChange={(e) => setFile(e.target.files[0])}
                     type="file"
@@ -50,35 +50,33 @@ function AIImage() {
                     onClick={() => fileRef.current.click()}
                     src={file ? URL.createObjectURL(file) : robot}
                     alt="profile"
-                    className="h-[full]"
+                    className="w-64 h-48 rounded-full cursor-pointer border-4 border-blue-400 transition-all hover:border-blue-600"
                   />
-                   <button type="submit"> <p className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
-                    Explore more
-                  </p>
-                  <Arrow />
+                  <button type="submit" className="ml-4 px-4 py-2 bg-blue-400 text-white rounded-md hover:bg-blue-500 focus:outline-none">
+                    <p className="font-semibold text-sm">Explore More</p>
+                    <Arrow className="w-4 h-4 ml-2" />
                   </button>
                 </form>
-                </div>
               </div>
-
-              <GradientLight />
-              <div
-                className="absolute inset-0.5 bg-n-8"
-                style={{ clipPath: "url(#benefits)" }}
-              >
-                <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
-                  <Image
-                    src={robot}
-                    alt="robot"
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                </div>
+            </div>
+            <GradientLight />
+            <div
+              className="absolute inset-0.5 bg-n-8"
+              style={{ clipPath: "url(#benefits)" }}
+            >
+              <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
+                <Image
+                  src={robot}
+                  alt="robot"
+                  layout="fill"
+                  objectFit="cover"
+                />
               </div>
-              <ClipPath />
-      </Section>
-</div>
-    </div>
+            </div>
+            <ClipPath />
+          </Section>
+        </div>
+      </div>
     </>
   );
 }
