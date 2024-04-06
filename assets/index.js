@@ -20,10 +20,14 @@ import chromecast from "./chrome-cast.svg";
 import sliders04 from "./sliders-04.svg";
 import loading from "./loading.png";
 import background from "./background.jpg";
+import logo from "./logo.png";
 
 import curve from "./hero/curve.png";
 import robot from "./hero/robot.jpg";
+import robo_new from "./hero/robo_new.jpg";
 import heroBackground from "./hero/hero-background.jpg";
+import new_robo from "./hero/new_robo.jpg";
+
 
 import curve1 from "./collaboration/curve-1.svg";
 import curve2 from "./collaboration/curve-2.svg";
@@ -50,6 +54,11 @@ import roadmap1 from "./roadmap/image-1.png";
 import roadmap2 from "./roadmap/image-2.png";
 import roadmap3 from "./roadmap/image-3.png";
 import roadmap4 from "./roadmap/image-4.png";
+import toadmap1 from "./roadmap/new_1.png";
+import toadmap2 from "./roadmap/new_2.png";
+import toadmap3 from "./roadmap/new_3.jpg";
+import toadmap4 from "./roadmap/new_4.jpg";
+
 import undone from "./roadmap/undone.svg";
 
 import notification1 from "./notification/image-1.png";
@@ -144,4 +153,11 @@ export {
   instagram,
   telegram,
   twitter,
+  robo_new,
+  new_robo,
+  toadmap1,
+  toadmap2,
+  toadmap3,
+  toadmap4,
+  logo,
 };

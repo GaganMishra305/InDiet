@@ -1,19 +1,39 @@
-import { companyLogos } from "../constants";
-import Image from "next/image";
+import React from 'react'; // Import React for component creation
 
-const CompanyLogos = ({ className }) => {
+const healthyVideos = [
+  {
+    url: "https://www.youtube.com/watch?v=fqhYBTg73fw", 
+    title: "What's the Best Diet? Healthy Eating 101",
+  },
+  {
+    url: "https://www.youtube.com/watch?v=Q4yUlJV31Rk", 
+    title: "How to make healthy eating unbelievably easy",
+  },
+  {
+    url: "https://www.youtube.com/watch?v=AYXfaVD5o40", 
+    title: "Cheap And Healthy Meals For The Week, Done In 1 Hour",
+  },
+  {
+    url: "https://www.youtube.com/watch?v=jwWpTAXu-Sg", // Full YouTube URL
+    title: "BEGINNERS GUIDE TO HEALTHY EATING | 15 healthy eating tips",
+  },
+];
+
+const HealthyVideos = ({ className }) => {
   return (
     <div className={className}>
       <h5 className="tagline mb-6 text-center text-n-1/50">
-        Helping people create beautiful content at
+        These are some videos that show the benefits of eating healthy in daily life
       </h5>
-      <ul className="flex">
-        {companyLogos.map((logo, index) => (
+      <ul className="flex flex-wrap justify-center"> {/* Improved layout */}
+        {healthyVideos.map((video, index) => (
           <li
-            className="flex items-center justify-center flex-1 h-[8.5rem]"
+            className="flex items-center justify-center m-2" // Added margin
             key={index}
           >
-            <Image src={logo} width={134} height={28} alt={logo} />
+            <a href={video.url} target="_blank" rel="noreferrer noopener">
+              {video.title}
+            </a>
           </li>
         ))}
       </ul>
@@ -21,4 +41,4 @@ const CompanyLogos = ({ className }) => {
   );
 };
 
-export default CompanyLogos;
+export default HealthyVideos;
