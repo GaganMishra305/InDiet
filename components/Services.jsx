@@ -33,7 +33,7 @@ const Services = () => {
             </div>
 
             <div className="relative z-1 max-w-[17rem] ml-auto">
-              <h4 className="h4 mb-4">Smartest AI</h4>
+              <h4 className="h4 mb-4">Smart AI Models</h4>
               <p className="body-2 mb-[3rem] text-n-3">
                 Unlock the Potential of Diet through Our Smart AI Models 
               </p>
