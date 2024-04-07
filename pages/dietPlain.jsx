@@ -8,8 +8,14 @@ function dietPlain() {
   });
   return (
     <>
-     <form action="">
-      </form> 
+      <div className="App">
+      <header className="App-header">
+        <h1 className="text-3xl font-bold text-center">Diet Planner</h1>
+      </header>
+      <main>
+        <DietPlannerForm />
+      </main>
+    </div>
     </>
   )
 }
