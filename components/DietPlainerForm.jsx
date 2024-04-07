@@ -32,10 +32,10 @@ const DietPlannerForm = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-8">
+    <div className="max-w-md mx-auto mt-32 ">
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label htmlFor="weight" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="weight" className="block text-sm font-medium text-gray-200">
             Weight (in kg)
           </label>
           <input
@@ -44,11 +44,11 @@ const DietPlannerForm = () => {
             type="text"
             value={weight}
             onChange={(e) => setWeight(e.target.value)}
-            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 block w-full border-gray-100 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-lg h-12"
           />
         </div>
         <div>
-          <label htmlFor="target_calories" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="target_calories" className="block text-sm font-medium text-gray-200">
             Target Calories
           </label>
           <input
@@ -57,25 +57,13 @@ const DietPlannerForm = () => {
             type="text"
             value={targetCalories}
             onChange={(e) => setTargetCalories(e.target.value)}
-            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-          />
-        </div>
-        <div>
-          <label htmlFor="image" className="block text-sm font-medium text-gray-700">
-            Upload Image
-          </label>
-          <input
-            id="image"
-            name="image"
-            type="file"
-            onChange={(e) => setFile(e.target.files[0])}
-            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-lg h-12"
           />
         </div>
         <div>
           <button
             type="submit"
-            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            className="w-full flex justify-center py-2 text-lg px-4 border border-transparent rounded-md shadow-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           >
             Submit
           </button>

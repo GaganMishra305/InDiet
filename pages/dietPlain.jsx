@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import DietPlainerForm from '../components/DietPlainerForm'
 
 function dietPlain() {
   const [formData, setFormData] = useState({
@@ -13,7 +14,7 @@ function dietPlain() {
         <h1 className="text-3xl font-bold text-center">Diet Planner</h1>
       </header>
       <main>
-        <DietPlannerForm />
+        <DietPlainerForm />
       </main>
     </div>
     </>
