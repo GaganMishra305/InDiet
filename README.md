@@ -84,3 +84,15 @@ Carbs: 45-65%, Proteins: 10-35%, Fats: 20-35%, Sugar: <10%, Fiber: 25-38g, Calor
     --> Model is Trained using Pulp to Give Diet for the entire week based on the amount of Carbs, Proteins, etc the user wants to consume.
 
     --> The link to the Model: https://colab.research.google.com/drive/1Kq0ipe3UCjZv1K5bkpIwAopt8Dca_UU5?usp=sharing
+
+## Web 3
+
+We have used ThirdWeb to create codeless contracts. Many NFT's have been minted and added to the application which the user can trade.
+
+## Front End
+
+NextJS has been used to create Front End of this application.
+
+## Back End
+
+Flask has been used to create Back end of this application.
