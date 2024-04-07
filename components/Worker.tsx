@@ -26,12 +26,8 @@ const Worker = () => {
                             <div className="flex w-full justify-center flex-col items-center">
                                 <MediaRenderer
                                     key={worker.metadata.id}
-                                    // loader={() => worker.metadata.image ?? ""} 
                                     src={worker.metadata.image}
                                     className="aspect-auto"
-                                    // alt="nft"
-                                    width={500}
-                                    height={500}
                                 />
                             </div>
                             <div>

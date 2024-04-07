@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Button.jsx", "components/Header.jsx", "components/Benefits.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Button.jsx", "components/Header.jsx", "components/Benefits.jsx", "pages/api/auth/[...thirdweb].js"],
   "exclude": ["node_modules"]
 }
