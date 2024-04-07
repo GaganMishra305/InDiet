@@ -6,26 +6,20 @@ const DietPlannerForm = () => {
   const [targetCalories, setTargetCalories] = useState("");
   const [scoreData, setScoreData] = useState("");
   const [nameData, setNameData] = useState("");
-  const [file, setFile] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const formdata = new FormData();
-      formdata.append("weight", weight);
-      formdata.append("target_calories", targetCalories);
-      if (!file) {
-        return;
+      const data = {
+        "weight": weight,
+        "target_calories": targetCalories,
       }
-      formdata.append("image", file);
-
       const res = await axios.post(
         "http://localhost:4000/plan_diet",
-        formdata
+        json.stringfy(data),
+       
       );
-      const { name, score } = res.data;
-      setScoreData(score);
-      setNameData(name);
+     console.log(res);
     } catch (error) {
       console.log(error);
     }
@@ -44,7 +38,7 @@ const DietPlannerForm = () => {
             type="text"
             value={weight}
             onChange={(e) => setWeight(e.target.value)}
-            className="mt-1 block w-full border-gray-100 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-lg h-12"
+            className="mt-1 px-6 block w-full border-gray-100 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-lg h-12"
           />
         </div>
         <div>
@@ -57,7 +51,7 @@ const DietPlannerForm = () => {
             type="text"
             value={targetCalories}
             onChange={(e) => setTargetCalories(e.target.value)}
-            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-lg h-12"
+            className="mt-1 block px-6 w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-lg h-12"
           />
         </div>
         <div>
